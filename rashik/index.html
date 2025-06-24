@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rashik Shrestha | Digital Business Card</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      margin: 0; padding: 0;
+    }
+    .card {
+      max-width: 400px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    img.profile {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    h1 { margin: 0.2rem 0; }
+    h2 { margin: 0.1rem 0; color: #888; font-size: 1rem; }
+    p { margin: 0.5rem 0; }
+    a { color: #007aff; text-decoration: none; }
+    .button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #007aff;
+      color: white;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Rashik" class="profile">
+    <h1>Rashik Shrestha</h1>
+    <h2>General Manager</h2>
+    <p>📞 <a href="tel:0431975105">0431 975 105</a></p>
+    <p>☎️ <a href="tel:0362312255">03 6231 2255</a></p>
+    <p>📧 <a href="mailto:rashik@experteducation.com.au">rashik@experteducation.com.au</a></p>
+    <p>🌐 <a href="https://experteducation.com.au" target="_blank">experteducation.com.au</a></p>
+
+    <a href="rashik.vcf" download class="button">📲 Add to Contacts</a>
+    <div class="note" id="iosNote">
+      <p><strong>iPhone users:</strong> After tapping, open the downloaded file from Safari’s top-right arrow to save the contact.</p>
+    </div>
+  </div>
+
+  <script>
+    if (!/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      document.getElementById('iosNote').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
