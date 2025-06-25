@@ -18,10 +18,13 @@
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
-    img.profile {
-      width: 120px; height: 120px;
+    .profile, .logo {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 1rem;
     }
     h1 { margin: 0.2rem 0; }
@@ -36,17 +39,30 @@
       border-radius: 8px;
       font-size: 1rem;
       text-decoration: none;
+      display: inline-block;
     }
     .note {
       margin-top: 1rem;
       font-size: 0.9rem;
       color: #666;
     }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .footer img {
+      height: 16px;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-   <img src="https://createvoke.com/logo.png" alt="Createvoke Logo" class="profile">
+    <!-- 🏢 Customer logo -->
+    <img src="customer-logo-url.png" alt="Customer Logo" class="profile" />
+
     <h1>Rashik Shrestha</h1>
     <h2>General Manager</h2>
     <p>📞 <a href="tel:0431975105">0431 975 105</a></p>
@@ -55,5 +71,21 @@
     <p>🌐 <a href="https://experteducation.com.au" target="_blank">experteducation.com.au</a></p>
 
     <a href="rashik.vcf" download class="button">📲 Add to Contacts</a>
+    <div class="note" id="iosNote">
+      <p><strong>iPhone users:</strong> Open the downloaded file from Safari’s top-right arrow to save the contact.</p>
+    </div>
+
+    <!-- ✨ Createvoke branding -->
+    <div class="footer">
+      by Createvoke
+      <img src="createvoke-logo-url.png" alt="Createvoke Logo" />
+    </div>
+  </div>
+
+  <script>
+    if (!/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      document.getElementById('iosNote').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
