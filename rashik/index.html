@@ -8,105 +8,135 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f9f9f9;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      margin: 0; padding: 0;
     }
+
     .card {
       max-width: 400px;
-      margin: 3rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      position: relative;
-      .profile-photo {
-     }
-      width: 20px;
-      height: 20px;
-      object-fit: cover;
-      border-radius: 0;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .company-logo {
+      max-width: 120px;
       margin: 0 auto 1rem;
       display: block;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     .profile-photo {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      margin: 0 auto 1rem;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0 auto 1.2rem;
       display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-    h1 { margin: 0.2rem 0; }
-    h2 { margin: 0.1rem 0; color: #888; font-size: 1rem; }
-    p { margin: 0.5rem 0; }
-    a { color: #007aff; text-decoration: none; }
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0.3rem 0 0.1rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #666;
+      margin: 0.1rem 0 0.8rem;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
     .button {
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
+      margin-top: 1.2rem;
+      display: inline-block;
       background: #007aff;
       color: white;
+      padding: 0.7rem 1.5rem;
       border-radius: 8px;
       font-size: 1rem;
       text-decoration: none;
-      display: inline-block;
+      font-weight: 500;
     }
-    .note {
-      margin-top: 1rem;
+
+    .taglines {
+      margin-top: 1.8rem;
       font-size: 0.9rem;
-      color: #666;
+      line-height: 1.5;
+      color: #444;
     }
+
+    .taglines em {
+      color: #007aff;
+    }
+
     .footer {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       font-size: 0.8rem;
       color: #aaa;
     }
+
     .footer img {
       height: 20px;
       vertical-align: middle;
-      margin-left: 3px;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 480px) {
+      .profile-photo {
+        width: 160px;
+        height: 160px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <!-- 🏢 Customer logo -->
-    <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/rashik/customer-logo.png" alt="Customer Logo" class="profile" />
-    <!-- Rashik photo -->
-    <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/rashik/rashik-crop.png" alt="Customer Logo" class="profile" />
 
+    <!-- 🏢 Expert Education logo -->
+    <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/rashik/customer-logo.png" alt="Company Logo" class="company-logo" />
 
-    <h1>Rashik Shrestha | Expert Education</h1>
-    <h2>General Manager</h2>
+    <!-- 📸 Rashik's Photo -->
+    <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/rashik/rashik-crop.png" alt="Rashik Shrestha" class="profile-photo" />
+
+    <h1>Rashik Shrestha</h1>
+    <h2>General Manager | Expert Education and Visa Tasmania</h2>
+
     <p>📞 <a href="tel:0431975105">0431 975 105</a></p>
     <p>☎️ <a href="tel:0362312255">03 6231 2255</a></p>
     <p>📧 <a href="mailto:rashik@experteducation.com.au">rashik@experteducation.com.au</a></p>
     <p>🌐 <a href="https://experteducation.com.au" target="_blank">experteducation.com.au</a></p>
 
-    
+    <!-- 📥 vCard Download Button -->
     <a href="rashik.vcf" download class="button">📲 Add to Contacts</a>
-    <div class="note" id="iosNote">
-    
 
-      <div class="taglines">
-    <p>The leading Education and Migration service provider for Australia.</p>
-    <p>Our services are based on 4 pillars: <strong>Honesty</strong>, <strong>Quality</strong>, <strong>Integrity</strong> & <strong>Professionalism</strong>.</p>
-    <p><em>"Let's Plan Your Career Together"</em></p>
-    <p><em>"Rely on Experts"</em></p>
-    <p><em>"An Amazing Client Experience"</em></p>
-  </div>
+    <!-- 📝 Taglines -->
+    <div class="taglines">
+      <p>The leading Education and Migration service provider for Australia.</p>
+      <p>Our services are based on 4 pillars: <strong>Honesty</strong>, <strong>Quality</strong>, <strong>Integrity</strong>, & <strong>Professionalism</strong>.</p>
+      <p><em>"Let's Plan Your Career Together"</em></p>
+      <p><em>"Rely on Experts"</em></p>
+      <p><em>"An Amazing Client Experience"</em></p>
+    </div>
 
-      
-    <!-- ✨ Createvoke branding -->
+    <!-- ✨ Branding -->
     <div class="footer">
       by Createvoke
-     <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/createvoke-logo.png" alt="Createvoke Logo" height="20" />
+      <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/createvoke-logo.png" alt="Createvoke Logo" />
     </div>
-  </div>
 
-  <script>
-    if (!/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-      document.getElementById('iosNote').style.display = 'none';
-    }
-  </script>
+  </div>
 </body>
 </html>
