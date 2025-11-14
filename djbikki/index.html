@@ -4,147 +4,118 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DJ Bikki | Aayo Gorkhali Events | Digital Business Card</title>
-
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
+    :root{
+      --card-bg: #ffffff;
+      --page-bg: #f9f9f9;
+      --accent: #007aff;
+      --muted: #666;
+      --shadow: rgba(0,0,0,0.06);
+      --maxw: 420px;
+    }
+    html,body{height:100%;margin:0}
+    body{
+      font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background:var(--page-bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      color:#1a1a1a;
     }
 
-    .card {
-      max-width: 420px;
-      width: 100%;
-      background: #ffffff;
-      padding: 22px;
-      border-radius: 18px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      text-align: center;
+    .card{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card-bg);
+      border-radius:14px;
+      padding:20px 18px;
+      box-shadow:0 12px 30px var(--shadow);
+      text-align:center;
     }
 
-    .logo {
-      width: 150px;
-      margin: 0 auto 18px;
-      display: block;
+    .photo{
+      width:180px;
+      height:180px;
+      max-width:60%;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+      margin:0 auto 12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
     }
 
-    .photo {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 14px;
-      display: block;
-      margin: 0 auto 15px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+    h1{font-size:1.3rem;margin:6px 0 2px;line-height:1.1}
+    h2{font-size:0.95rem;color:var(--muted);margin:0 0 10px}
+
+    .contact-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#f2f6ff;border-radius:10px;padding:8px 12px;
+      color:#0256c9;text-decoration:none;font-weight:600;font-size:0.95rem;
+      box-shadow:inset 0 -1px 0 rgba(0,0,0,0.02);
     }
 
-    h1 {
-      font-size: 1.4rem;
-      margin: 8px 0 4px;
+    a.pill{color:#0256c9}
+
+    .button{
+      display:inline-block;margin-top:12px;background:var(--accent);
+      color:white;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;
+      box-shadow:0 6px 16px rgba(0,122,255,0.15);
     }
 
-    h2 {
-      font-size: 1rem;
-      margin: 0;
-      color: #666;
+    .note{
+      margin-top:16px;text-align:left;font-size:0.95rem;line-height:1.45;color:#333;
+      max-width:360px;margin-left:auto;margin-right:auto;
     }
+    .note ul{padding-left:18px;margin:8px 0}
+    .note li{margin:6px 0}
 
-    .pill-row {
-      margin-top: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .footer{margin-top:18px;color:#999;font-size:0.82rem}
+    .footer img{height:18px;vertical-align:middle;margin-left:6px}
 
-    .pill {
-      background: #edf3ff;
-      color: #0059c9;
-      padding: 9px 13px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 11px 22px;
-      background: #007aff;
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .note {
-      text-align: left;
-      background: #fafafa;
-      padding: 14px;
-      border-radius: 12px;
-      margin-top: 18px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      border-left: 4px solid #007aff;
-    }
-
-    .footer {
-      margin-top: 18px;
-      font-size: 0.8rem;
-      color: #777;
-    }
-
-    .footer img {
-      height: 18px;
-      margin-left: 4px;
-      vertical-align: middle;
+    @media (max-width:420px){
+      .photo{width:160px;height:160px}
+      .logo{max-width:100px}
     }
   </style>
 </head>
-
 <body>
   <div class="card">
+    <!-- company logo (optional) -->
+    <img class="logo" src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/djbikki/SQUARE.png" alt="Aayo Gorkhali Events logo" />
 
-    <!-- Single Logo -->
-    <img class="logo" src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/djbikki/SQUARE.png" alt="DJ Bikki Logo">
-
-    <!-- Photo (same image used, or replace later if you have an actual photo) -->
-    <img class="photo" src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/djbikki/SQUARE.png" alt="DJ Bikki Photo">
+    <!-- main photo/logo to embed in vCard (displayed on page) -->
+    <img class="photo" src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/djbikki/SQUARE.png" alt="DJ Bikki" />
 
     <h1>DJ Bikki</h1>
     <h2>Aayo Gorkhali Events</h2>
 
-    <!-- Contact -->
-    <div class="pill-row">
+    <div class="contact-row">
       <a class="pill" href="tel:+61416838672">📞 +61 416 838 672</a>
       <a class="pill" href="mailto:bikkichitrakar@gmail.com">✉️ Email</a>
     </div>
 
-    <!-- Socials -->
-    <div class="pill-row">
+    <div class="contact-row">
       <a class="pill" href="https://www.instagram.com/chitrakarbikki?igsh=MXF1Nnp5MWJpaWhzOQ==" target="_blank">Instagram</a>
       <a class="pill" href="https://www.instagram.com/chitrakarbikki?igsh=MXF1Nnp5MWJpaWhzOQ==" target="_blank">Facebook</a>
       <a class="pill" href="https://www.tiktok.com/@djbikkichitrakar?_r=1&_t=ZS-91NZLYUXTXz" target="_blank">TikTok</a>
     </div>
 
-    <!-- Download Contact -->
+    <!-- vCard download (upload DJ_Bikki.vcf to same folder) -->
     <a class="button" href="DJ_Bikki.vcf" download>📲 Add to Contacts</a>
 
-    <!-- Notes (only once) -->
     <div class="note">
-      <p><strong>DJ hire available for all types of events.</strong></p>
-      <p>Sound and DJ services for private parties.</p>
-      <p>For large-scale events, coordination is provided through Aayo Gorkhali Events.</p>
+      <p><strong>Note:</strong> 
+        <li>🎧 DJ hire for all events</li>
+        <li>🔊 Sound & DJ services for private parties</li>
+        <li>📋 Coordination for large events via Aayo Gorkhali Events</li>
+      </ul>
     </div>
 
     <div class="footer">
-      Powered by Createvoke
-      <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/createvoke-logo.png" alt="Createvoke Logo">
+      powered by Createvoke
+      <img src="https://raw.githubusercontent.com/createvoke/nfc-contact-card/main/createvoke-logo.png" alt="Createvoke logo" />
     </div>
   </div>
 </body>
